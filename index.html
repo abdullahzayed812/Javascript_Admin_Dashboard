@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <section class="container">
+      <nav>
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="logo-apple"></ion-icon>
+              </span>
+              <span class="title">Brand Name</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="title">Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="person-outline"></ion-icon>
+              </span>
+              <span class="title">Message</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="chatbubble-outline"></ion-icon>
+              </span>
+              <span class="title">Help</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="help-outline"></ion-icon>
+              </span>
+              <span class="title">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="settings-outline"></ion-icon>
+              </span>
+              <span class="title">Password</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+              </span>
+              <span class="class="title">Sign Out</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <header class="topbar">
+          <div class="toggle">
+            <ion-icon name="menu-outline"></ion-icon>
+          </div>
+          <div class="search">
+            <label>
+              <input type="text" placeholder="Seach Customers" />
+              <ion-icon  name="search-outline"></ion-icon>
+            </label>
+          </div>
+          <figure class="image">
+            <img src="./images/user.jpg" alt="person-img" />
+          </figure>
+        </header>
+        <section class="stats">
+          <article class="box">
+            <div class="info">
+              <span class="number">1,504</span>
+              <span class="text">Daily Views</span>
+            </div>
+            <div class="icon">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+          </article>
+          <article class="box">
+            <div class="info">
+              <span class="number">80</span>
+              <span class="text">Sales</span>
+            </div>
+            <div class="icon">
+              <ion-icon name="cart-outline"></ion-icon>
+            </div>
+          </article>
+          <article class="box">
+            <div class="info">
+              <span class="number">248</span>
+              <span class="text">Comments</span>
+            </div>
+            <div class="icon">
+              <ion-icon name="chatbubbles-outline"></ion-icon>
+            </div>
+          </article>
+          <article class="box">
+            <div class="info">
+              <span class="number">$7,842</span>
+              <span class="text">Earning</span>
+            </div>
+            <div class="icon">
+              <ion-icon name="cash-outline"></ion-icon>
+            </div>
+          </article>
+        </section>
+        <section class="graph">
+          <article class="graph__box">
+            <canvas id="myChart"></canvas>
+          </article>
+          <article class="graph__box">
+            <canvas id="myLinearChart"></canvas>
+          </article>
+        </section>
+        <section class="details">
+          <section class="recent-order">
+            <header class="recent__header">
+              <h2>Recent Order</h2>
+              <a href="#" class="btn">View All</a>
+            </header>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Payment</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Window Coolers</td>
+                  <td>$1200</td>
+                  <td>Paid</td>
+                  <td>
+                    <span class="status delivered">
+                      Delivered
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Speakers</td>
+                  <td>$110</td>
+                  <td>Due</td>
+                  <td>
+                    <span class="status pending">
+                      Pending
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Hp Laptop</td>
+                  <td>$110</td>
+                  <td>Paid</td>
+                  <td>
+                    <span class="status return">
+                      Return
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Apple Watch</td>
+                  <td>$1200</td>
+                  <td>Due</td>
+                  <td>
+                    <span class="status inprogress">
+                      In progress
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Wall Fan</td>
+                  <td>$201</td>
+                  <td>Paid</td>
+                  <td>
+                    <span class="status delivered">
+                      Delivered
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Adidas Shoes</td>
+                  <td>$110</td>
+                  <td>Paid</td>
+                  <td>
+                    <span class="status pending">
+                      Pending
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Demin Shirts</td>
+                  <td>$620</td>
+                  <td>Due</td>
+                  <td>
+                    <span class="status return">
+                      Return
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Casual Shoes</td>
+                  <td>$803</td>
+                  <td>Paid</td>
+                  <td>
+                    <span class="status inprogress">
+                      In progress
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Wall Fans</td>
+                  <td>$200</td>
+                  <td>Paid</td>
+                  <td>
+                    <span class="status pending">
+                      Pending
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Demin Shrits</td>
+                  <td>$210</td>
+                  <td>Due</td>
+                  <td>
+                    <span class="status delivered">
+                      Delivered
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section class="recent-customers">
+            <header class="recent__header customers">
+              <h2>Recent Customers</h2>
+            </header>
+            <article class="person">
+              <figure>
+                <img src="./images/img1.jpg" alt="person-img" />
+              </figure>
+              <article class="info">
+                <h4 class="name">Mohammed</h4>
+                <span class="country">Italy</span>
+              </article>
+            </article>
+            <article class="person">
+              <figure>
+                <img src="./images/img2.jpg" alt="person-img" />
+              </figure>
+              <article class="info">
+                <h4 class="name">Ahmed</h4>
+                <span class="country">Egypt</span>
+              </article>
+            </article>
+            <article class="person">
+              <figure>
+                <img src="./images/img3.jpg" alt="person-img" />
+              </figure>
+              <article class="info">
+                <h4 class="name">Hassan</h4>
+                <span class="country">Giza</span>
+              </article>
+            </article>
+            <article class="person">
+              <figure>
+                <img src="./images/img4.jpg" alt="person-img" />
+              </figure>
+              <article class="info">
+                <h4 class="name">Yassien</h4>
+                <span class="country">Germany</span>
+              </article>
+            </article>
+            <article class="person">
+              <figure>
+                <img src="./images/img5.jpg" alt="person-img" />
+              </figure>
+              <article class="info">
+                <h4 class="name">Aya</h4>
+                <span class="country">Japan</span>
+              </article>
+            </article>
+            <article class="person">
+              <figure>
+                <img src="./images/img6.jpg" alt="person-img" />
+              </figure>
+              <article class="info">
+                <h4 class="name">Abdullah</h4>
+                <span class="country">Egypt</span>
+              </article>
+            </article>
+            <article class="person">
+              <figure>
+                <img src="./images/img7.jpg" alt="person-img" />
+              </figure>
+              <article class="info">
+                <h4 class="name">Ayman</h4>
+                <span class="country">China</span>
+              </article>
+            </article>
+          </section>
+        </section>
+      </main>
+    </section>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+      ></script>
+      <!-- ChartJs CDN-->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+      <script src="./js/charts.js"></script>
+      <script src="./js/script.js"></script>
+  </body>
+</html>

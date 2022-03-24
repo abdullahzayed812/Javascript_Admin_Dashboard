@@ -1,0 +1,408 @@
+:root {
+  --blue: #287bff;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --dark-black: #222;
+  --light-black: #999;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.container {
+  position: relative;
+  width: 100%;
+}
+nav {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  background-color: var(--blue);
+  border-left: 10px solid var(--blue);
+  transition: 0.5s;
+  overflow: hidden;
+}
+nav.open {
+  width: 60px;
+}
+nav ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+nav ul li {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+nav ul li:hover,
+nav ul li.clicked {
+  background-color: var(--white);
+}
+nav ul li:nth-child(1) {
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+nav ul li a {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 10px;
+  white-space: nowrap;
+  color: white;
+}
+nav ul li.clicked a::before,
+nav ul li.clicked a::after,
+nav ul li:hover a::before,
+nav ul li:hover a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--blue);
+}
+nav ul li:hover a::before,
+nav ul li.clicked a::before {
+  top: -99%;
+  right: 0px;
+  box-shadow: 22px 25px 0px var(--white);
+}
+nav ul li:hover a::after,
+nav ul li.clicked a::after {
+  bottom: -99%;
+  right: 0;
+  box-shadow: 25px -25px 0 white;
+}
+nav ul li:hover a,
+nav ul li.clicked a {
+  color: var(--blue);
+}
+nav ul li a .icon {
+  font-size: 25px;
+}
+nav ul li a .title {
+  font-size: 18px;
+}
+main {
+  width: calc(100% - 250px);
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 250px;
+  background-color: var(--white);
+  transition: 0.5s;
+}
+main.expansion {
+  width: calc(100% - 60px);
+  left: 60px;
+}
+main .topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+}
+main .toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  font-size: 40px;
+}
+main .toggle:hover {
+  cursor: pointer;
+}
+main .search {
+  position: relative;
+  width: 400px;
+}
+main .search label {
+  position: relative;
+  width: 100%;
+}
+main input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--light-black);
+  border-radius: 20px;
+  padding: 5px 35px;
+  font-size: 18px;
+}
+main input:focus {
+  outline: 1px solid var(--blue);
+}
+main label :last-child {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+main .image {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+main .image img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  border-radius: 50%;
+}
+main .stats {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+main .stats .box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: var(--white);
+  box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.5s;
+}
+main .stats .box:hover {
+  background-color: var(--blue);
+}
+main .stats .box .info > span {
+  display: block;
+}
+main .stats .box .info .number {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--blue);
+}
+main .stats .box .info .text {
+  font-size: 19px;
+  color: var(--light-black);
+}
+main .stats .box .icon {
+  font-size: 50px;
+}
+main .stats .box:hover .number,
+main .stats .box:hover .text,
+main .stats .box:hover .icon {
+  color: var(--white);
+}
+main .graph {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+}
+main .graph__box {
+  background-color: var(--white);
+  box-shadow: 0px 7px 25px rgba(0, 0, 0, 0.08);
+}
+main .details {
+  width: 100%;
+  position: relative;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+main .details .recent-order {
+  position: relative;
+  padding: 20px;
+  display: grid;
+  background-color: var(--white);
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.08);
+}
+.recent__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+.recent__header h2 {
+  color: var(--blue);
+  font-size: 25px;
+}
+main .details .recent-order .recent__header .btn {
+  color: var(--white);
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  background-color: var(--blue);
+  border-radius: 5px;
+}
+.details .recent-order table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.details .recent-order table thead th {
+  text-align: left;
+}
+.details .recent-order table tr:not(:last-child) {
+  color: var(--black);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.details .recent-order table tbody tr:hover {
+  color: var(--white);
+  background-color: var(--blue);
+}
+.details .recent-order table tr td {
+  font-size: 14px;
+}
+.details .recent-order table tr td,
+.details .recent-order table thead th {
+  padding: 10px;
+}
+.details .recent-order table tr td:last-child,
+.details .recent-order table thead th:last-child {
+  text-align: right;
+}
+.details .recent-order table .status {
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: var(--white);
+}
+.details .recent-order table .status.delivered {
+  background-color: #8de02c;
+}
+.details .recent-order table .status.return {
+  background-color: #f00;
+}
+.details .recent-order table .status.pending {
+  background-color: #f9ca3f;
+}
+.details .recent-order table .status.inprogress {
+  background-color: #1975ce;
+}
+.details .recent-customers {
+  position: relative;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--white);
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.08);
+}
+.recent__header.customers {
+  margin-bottom: 20px;
+}
+.recent-customers .person {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+.recent-customers .person figure {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.recent-customers .person figure img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.recent-customers .person:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.recent-customers .person .info .name {
+  font-size: 17px;
+}
+.recent-customers .person .info .country {
+  font-size: 15px;
+  color: var(--light-black);
+}
+@media (max-width: 992px) {
+  nav {
+    width: 60px;
+  }
+  nav.open {
+    width: 250px;
+  }
+  main {
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  main.expansion {
+    width: calc(100% - 250px);
+    left: 250px;
+  }
+  main .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  main .graph {
+    grid-template-columns: 1fr;
+  }
+  main .graph .graph-box {
+    max-width: 400px;
+  }
+  main .details {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .details .recent-order table .status.inprogress {
+    white-space: nowrap;
+  }
+}
+@media only screen and (max-width: 650px) {
+  nav {
+    left: -300px;
+  }
+  nav.open {
+    left: 0;
+  }
+  main {
+    width: 100%;
+    left: 0;
+  }
+  main .stats {
+    grid-template-columns: 1fr;
+  }
+  main .image {
+    min-width: 40px;
+  }
+  .details .recent-order {
+    overflow-x: auto;
+  }
+}
